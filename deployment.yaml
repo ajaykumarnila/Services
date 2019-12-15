@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:
+metadata: 
   name: myapp-deployment
-  labels: {app: myapp, app.kubernetes.io/managed-by: graphite-jenkins-gke}
-spec:
-  replicas: 1
-  selector:
-    matchLabels: {app: myapp}
-  template:
-    metadata:
-      labels: {app: myapp}
-    spec:
-      containers:
-      - name: myapp-container1
+  labels: 
+    app: myapp
+spec: 
+  replicas: 3
+  template: 
+    metadata: 
+      labels: 
+        app: myapp
+    spec: 
+      containers: 
+      - name: myapp-conatiner
         image: in28min/hello-world-rest-api:0.0.1.RELEASE
-        ports:
-        - {containerPort: 80}
+        ports: 
+        - containerPort: 80
