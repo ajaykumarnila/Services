@@ -6,6 +6,9 @@ metadata:
     app: myapp
 spec: 
   replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
   template: 
     metadata: 
       labels: 
